@@ -106,7 +106,7 @@ describe("TokenMaster", () => {
   describe("Withdrawing", () => {
     const ID = 1
     const SEAT = 50
-    const AMOUNT = ethers.utils.parseUnits("10", 'ether')
+    const AMOUNT = ethers.utils.parseUnits("1", 'ether')
     let balanceBefore
 
     beforeEach(async () => {
