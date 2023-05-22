@@ -23,7 +23,7 @@ async function main() {
       name: "UFC Miami",
       cost: tokens(3),
       tickets: 0,
-      date: "Apr 8",
+      date: "May 31",
       time: "6:00PM EST",
       location: "Miami-Dade Arena - Miami, FL"
     },
@@ -31,7 +31,7 @@ async function main() {
       name: "ETH Tokyo",
       cost: tokens(1),
       tickets: 125,
-      date: "Apr 14",
+      date: "Jun 2",
       time: "1:00PM JST",
       location: "Tokyo, Japan"
     },
@@ -39,7 +39,7 @@ async function main() {
       name: "ETH Privacy Hackathon",
       cost: tokens(0.25),
       tickets: 200,
-      date: "Apr 27",
+      date: "Jun 9",
       time: "10:00AM TRT",
       location: "Turkey, Istanbul"
     },
@@ -47,7 +47,7 @@ async function main() {
       name: "Dallas Mavericks vs. San Antonio Spurs",
       cost: tokens(5),
       tickets: 0,
-      date: "May 2",
+      date: "Jun 11",
       time: "2:30PM CST",
       location: "American Airlines Center - Dallas, TX"
     },
