@@ -31,3 +31,4 @@ In a separate terminal execute:
 
 ### 6. Start frontend
 `$ npm run start`# TokenMaster
+# TokenMaster
