@@ -1,18 +1,23 @@
 import { ethers } from 'ethers'
 
-const Navigation = ({ account, setAccount }) => {
+const Navigation = ({ query, setQuery, occasions, account, setAccount }) => {
+
   const connectHandler = async () => {
     const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' })
     const account = ethers.utils.getAddress(accounts[0])
     setAccount(account)
   }
-
+  
   return (
     <nav>
       <div className='nav__brand'>
         <h1>tokenmaster</h1>
 
-        <input className='nav__search' type="text" placeholder='Find millions of experiences' />
+        <input onChange={e=>{setQuery(e.target.value)}} 
+        className='nav__search' 
+        type="text" 
+        placeholder='Find millions of experiences' 
+        />
 
         <ul className='nav__links'>
           <li><a href="/">Concerts</a></li>

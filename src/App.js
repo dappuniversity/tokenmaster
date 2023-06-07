@@ -23,6 +23,9 @@ function App() {
   const [occasion, setOccasion] = useState({})
   const [toggle, setToggle] = useState(false)
 
+  const [query, setQuery] = useState("")
+
+
   const loadBlockchainData = async () => {
     const provider = new ethers.providers.Web3Provider(window.ethereum)
     setProvider(provider)
@@ -55,7 +58,7 @@ function App() {
   return (
     <div>
       <header>
-        <Navigation account={account} setAccount={setAccount} />
+        <Navigation query={query} setQuery={setQuery} occasions={occasions} account={account} setAccount={setAccount} />
 
         <h2 className="header__title"><strong>Event</strong> Tickets</h2>
       </header>
@@ -63,19 +66,21 @@ function App() {
       <Sort />
 
       <div className='cards'>
-        {occasions.map((occasion, index) => (
-          <Card
-            occasion={occasion}
-            id={index + 1}
-            tokenMaster={tokenMaster}
-            provider={provider}
-            account={account}
-            toggle={toggle}
-            setToggle={setToggle}
-            setOccasion={setOccasion}
-            key={index}
-          />
-        ))}
+        {occasions.filter(occasion=>
+          occasion.name.toLowerCase().includes(query.toLowerCase())
+          ).map((occasion, index) => (
+            <Card
+              occasion={occasion}
+              id={index + 1}
+              tokenMaster={tokenMaster}
+              provider={provider}
+              account={account}
+              toggle={toggle}
+              setToggle={setToggle}
+              setOccasion={setOccasion}
+              key={index}
+            />
+          ))}
       </div>
 
       {toggle && (

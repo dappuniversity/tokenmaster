@@ -20,48 +20,40 @@ async function main() {
   // List 6 events
   const occasions = [
     {
-      name: "UFC Miami",
+      name: "The Weeknd After Hours til Dawn Tour",
       cost: tokens(3),
-      tickets: 0,
-      date: "May 31",
-      time: "6:00PM EST",
-      location: "Miami-Dade Arena - Miami, FL"
+      tickets: 1100,
+      date: "June 31",
+      time: "7:00PM EST",
+      location: "Rogers Centre - Toronto, FL"
     },
     {
-      name: "ETH Tokyo",
+      name: "Ottawa Senators",
       cost: tokens(1),
-      tickets: 125,
-      date: "Jun 2",
-      time: "1:00PM JST",
-      location: "Tokyo, Japan"
+      tickets: 0,
+      date: "Sep 14",
+      time: "2:30PM EST",
+      location: "Canadian Tire Centre - Ottawa, Canada"
     },
     {
-      name: "ETH Privacy Hackathon",
+      name: "ETH Dubai Hackathon",
       cost: tokens(0.25),
-      tickets: 200,
+      tickets: 110,
       date: "Jun 9",
-      time: "10:00AM TRT",
-      location: "Turkey, Istanbul"
+      time: "9:30AM UTC+4",
+      location: "Dubai, United Arab Emirates"
     },
     {
-      name: "Dallas Mavericks vs. San Antonio Spurs",
+      name: "Miami Heat vs. Denver Nuggets",
       cost: tokens(5),
       tickets: 0,
-      date: "Jun 11",
-      time: "2:30PM CST",
-      location: "American Airlines Center - Dallas, TX"
+      date: "Jun 7",
+      time: "8:30PM EST",
+      location: "Kaseya center - Miami, FL"
     },
-    {
-      name: "ETH Global Toronto",
-      cost: tokens(1.5),
-      tickets: 125,
-      date: "Jun 23",
-      time: "11:00AM EST",
-      location: "Toronto, Canada"
-    }
   ]
 
-  for (var i = 0; i < 5; i++) {
+  for (var i = 0; i < occasions.length; i++) {
     const transaction = await tokenMaster.connect(deployer).list(
       occasions[i].name,
       occasions[i].cost,
